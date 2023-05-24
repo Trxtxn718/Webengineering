@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+    color: dodgerblue;
+    
+}
+.pricing-button{
+ 
+    border: dodgerblue 1px solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1vh;
+    color: dodgerblue;
+    margin: auto;
+}
+
+.is-featured{
+    color: white;
+    background-color: dodgerblue;
+}
+
+.pricing-price{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 150%;  
+}
+
+.pricing-features{
+    list-style-type: none;
+}
+
+.pricing-header{
+    color: grey;
+}
+
+.pricing-plan{
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-img{
+    margin: auto;
+}
+
+ul{
+    padding: 0;
+}
+
