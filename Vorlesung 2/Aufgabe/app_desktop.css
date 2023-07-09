@@ -1,11 +1,73 @@
-@media (min-width: 900px){
-    div{
-        display: flex;
-        flex-direction: row;
-        margin-top: 10vh;
-        margin-bottom: 10vh;
-        margin-left: 5vh;
-        margin-right: 5vh;
-  
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    color: dodgerblue;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.pricing-plan {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-header{
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom: lightblue solid 1px;
+}
+
+h2 {
+    color: gray;
+    padding-bottom: 5%;
+}
+
+ul {
+    margin-top: 0;
+    padding: 0;
+    padding-bottom: 5%;
+    list-style-type: none;
+    line-height: 150%;
+}
+
+li{
+    border-bottom: lightblue solid 1px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+    padding-top: 1%;
+}
+
+a {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+.pricing-img {
+    margin: auto;
+    width: 70%;
+}
+
+.pricing-price {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.pricing-button {
+    border: dodgerblue solid 1px;
+    border-radius: 2vw;
+    margin: auto;
+    width: fit-content;
+    padding: 2%;
+}
+
+.is-featured {
+    background-color: dodgerblue;
+    color: white;
 }

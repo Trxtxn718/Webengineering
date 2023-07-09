@@ -1,17 +1,20 @@
 let currentResult = '';
 
 function appendNumber(number) {
-    // to be implemented
+    currentResult = currentResult + number;
+    document.querySelector("#result").value = currentResult;
 }
 
 function appendOperator(operator) {
-    // to be implemented
+    currentResult = currentResult + operator;
+    document.querySelector("#result").value = currentResult;
 }
 
 function calculate() {
-    // to be implemented
+    document.querySelector("#result").value = `${eval(currentResult)}`;
 }
 
 function clearResult() {
-    // to be implemented
+    currentResult = '';
+    document.querySelector("#result").value = '';
 }

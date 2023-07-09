@@ -1,60 +1,48 @@
 let board = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
-let gameOver = false;
-
+let game = false;
 
 function makeMove(index) {
-    // to be implemented
-    if(gameOver===false){
-    if (board[index] === '') {
-        board[index] = currentPlayer
-        const button = event.currentTarget
-        button.innerHTML = board[index]
-        gameOver = checkWin(currentPlayer)
+    let cells = document.querySelectorAll(".cell");
+
+    if (cells[index].innerHTML == '') {
+        cells[index].innerHTML = currentPlayer;
+    }
+
+    if (currentPlayer == 'X') {
+        currentPlayer = 'O';
+    } else {
+        currentPlayer = 'X';
+    }
+
+
+    if (cells[0].innerHTML == cells[1].innerHTML && cells[1].innerHTML == cells[2].innerHTML && cells[0].innerHTML != '') game = true;
+    if (cells[3].innerHTML == cells[4].innerHTML && cells[4].innerHTML == cells[5].innerHTML && cells[3].innerHTML != '') game = true;
+    if (cells[6].innerHTML == cells[7].innerHTML && cells[6].innerHTML == cells[8].innerHTML && cells[6].innerHTML != '') game = true;
+
+    if (cells[0].innerHTML == cells[3].innerHTML && cells[3].innerHTML == cells[6].innerHTML && cells[0].innerHTML != '') game = true;
+    if (cells[1].innerHTML == cells[4].innerHTML && cells[4].innerHTML == cells[7].innerHTML && cells[1].innerHTML != '') game = true;
+    if (cells[2].innerHTML == cells[5].innerHTML && cells[5].innerHTML == cells[8].innerHTML && cells[2].innerHTML != '') game = true;
+
+    if (cells[0].innerHTML == cells[4].innerHTML && cells[4].innerHTML == cells[8].innerHTML && cells[0].innerHTML != '') game = true;
+    if (cells[2].innerHTML == cells[4].innerHTML && cells[4].innerHTML == cells[6].innerHTML && cells[2].innerHTML != '') game = true;
+
+    if (game) {
+        if (currentPlayer == 'X') {
+            currentPlayer = 'O';
+        } else {
+            currentPlayer = 'X';
         }
-        if(gameOver === true){
-            console.log('You win')
-        }
-        if (currentPlayer === 'X') {
-            currentPlayer = 'O'
-        }
-        else {
-            currentPlayer = 'X'
-        }
+        document.querySelector("h1").innerHTML = currentPlayer + " won!";
     }
 }
+
 function resetGame() {
-    // to be implemented
-    const button = document.querySelector()
-    button.innerHTML = board[i]
-    for (let i = 0; i < 9; i++) {
-        board[i] = ''
+    let cells = document.querySelectorAll(".cell");
+    for (let cell of cells) {
+        cell.innerHTML = '';
     }
-
-}
-
-function checkWin(Player) {
-    let field = 0
-    for (let i = 0; i < 3; i++) {
-        if (board[field] === board[field + 1] && board[field] === board[field + 2]) {
-           if(board[field]=== Player && board[field+1]===Player &&board[field+2]===Player){ 
-            return true
-           }
-        }
-        field = field + 3
-    }
-    field = 0
-    for(let i = 0; i<3; i++){
-        if(board[field] === board[field + 3] && board[field] === board[field + 6]){
-           if(board[field]===Player&& board[field+3]===Player&&board[field+6]===Player){
-           
-                return true
-        }
-    }
-    }
-    if(board[0]===board[4] && board[0] === board[8]){
-        if(board[0]===Player&& board[4]===Player&&board[8]===Player){ 
-            return true
-           }
-    }
+    game = false;
+    document.querySelector("h1").innerHTML = "Tic Tac Toe";
+    currentPlayer = 'X';
 }
